@@ -17,6 +17,7 @@
         <module>api-gateway</module>
         <module>photos-resource-server</module>
         <module>resource-server</module>
+        <module>discovery-service</module>
     </modules>
 
     <properties>
