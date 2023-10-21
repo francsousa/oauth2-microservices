@@ -12,6 +12,12 @@
     <name>oauth2-microservices</name>
     <url>https://www.github.com/francsousa/oauth2-microservices</url>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.5</version>
+    </parent>
+
     <modules>
         <module>albums-resource-server</module>
         <module>api-gateway</module>
