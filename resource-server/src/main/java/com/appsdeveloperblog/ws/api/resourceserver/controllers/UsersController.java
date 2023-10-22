@@ -1,6 +1,7 @@
 package com.appsdeveloperblog.ws.api.resourceserver.controllers;
 
 import com.appsdeveloperblog.ws.api.resourceserver.response.UserRest;
+import org.springframework.core.env.Environment;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UsersController {
 
+    Environment env;
+
     @GetMapping("/status/check")
     public String status() {
-        return "Working...";
+        return "Working on port: " + env.getProperty("local.server.port");
     }
 
     @PreAuthorize("hasAuthority('ROLE_developer') or #id == #jwt.subject")
